@@ -4,10 +4,6 @@ const userController = {
   //get all users
   getUsers(req, res) {
     User.find({})
-      .populate({
-        path: "friends",
-        select: "-__v",
-      })
       .select("-__v")
       .sort({ _id: -1 })
       .then((dbUserData) => res.json(dbUserData))
@@ -28,8 +24,6 @@ const userController = {
         path: "friends",
         select: "-__v",
       })
-      .select("-__v")
-      .sort({ _id: -1 })
       .then((dbUserData) => {
         if (!dbUserData) {
           res.status(404).json({ message: "No user found !" });

@@ -76,7 +76,7 @@ const userController = {
   },
 
   //create user
-  createThought({ body }, res) {
+  createUsers({ body }, res) {
     Thought.create(body)
       .then((dbUserData) => res.json(dbUserData))
       .catch((err) => res.json(err));

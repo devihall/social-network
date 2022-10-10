@@ -1,6 +1,8 @@
+//require dependencies
 const { Schema, model, Types } = require("mongoose");
 const moment = require('moment');
 
+//reaction schema
 const ReactionSchema = new Schema ({
     reactionId: {
         type: Schema.Types.ObjectId,
@@ -35,6 +37,7 @@ const ReactionSchema = new Schema ({
     }
 );
 
+//thought schema
 const ThoughtSchema = new Schema(
   {
     thoughtText: {
@@ -57,7 +60,7 @@ const ThoughtSchema = new Schema(
       type: String,
       required: true,
     },
-
+    //array of nested documents with the reactionSchema
     reactions: [ReactionSchema],
   },
 
@@ -69,12 +72,12 @@ const ThoughtSchema = new Schema(
     id: false,
   }
 );
-
-ThoughtSchema.virtual('reactionNumbers').get(function (){
+//virtual that retrieves the length of the thought's reactions array field
+ThoughtSchema.virtual('reactionCount').get(function (){
     return this.reactions.length
 })
 
-//creating the though model based on the thought schema
+//creating the thought model based on the thought schema
 const Thought = model('Thought', ThoughtSchema)
 
 //export the thought model

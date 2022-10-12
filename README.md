@@ -9,19 +9,15 @@ API for a social network web application where users can share their thoughts, r
 - [@devihall](https://www.github.com/devihall)
 
 
-## Badges
-
-
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
-
 
 
 
 ## Demo
 
 #### Video 
-video link goes here
+[watch video walkthrough](https://watch.screencastify.com/v/x4FfmPZ9I7BEQ30GSHR3)
 
 
 

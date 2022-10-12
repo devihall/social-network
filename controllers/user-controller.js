@@ -38,8 +38,12 @@ const userController = {
   },
 
   //update users
-  updateUser({ params }, res) {
-    User.findOneAndUpdate({ _id: params.id },  {
+  updateUser(req, res) {
+    User.findOneAndUpdate({ _id: req.params.id },  
+    {
+    $set: req.body
+    },
+    {
       new: true,
       runValidators: true,
     })
